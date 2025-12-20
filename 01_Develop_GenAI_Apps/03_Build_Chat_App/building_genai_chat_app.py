@@ -1,12 +1,13 @@
 import os
+from dotenv import load_dotenv
+load_dotenv('.env')
+project_endpoint = os.environ['FOUNDRY_PROJECT_ENDPOINT']
+
 from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
-from dotenv import load_dotenv
-
-load_dotenv('.env')
 
 project = AIProjectClient(
-    endpoint=os.environ['FOUNDRY_PROJECT_ENDPOINT'],
+    endpoint=project_endpoint,
     credential=DefaultAzureCredential(
         exclude_environment_credential=True,
         exclude_managed_identity_credentual=True
