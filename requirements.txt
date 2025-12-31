@@ -1,3 +1,4 @@
 azure-ai-projects
 azure-identity
 openai
+azure-ai-textanalytics==5.3.0
